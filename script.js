@@ -60,4 +60,123 @@ const getInfo = ({ ...org }) => {
 };
 
 const result2 = getInfo(organisation);
-console.log(result2);
+//
+// third
+
+/*
+Дан объект:
+
+let user = {
+
+    "guid": "dd969d30-841d-436e-9550-3b0c649e4d34",
+
+    "isActive": false,
+
+    "balance": "$2,474.46",
+
+    "age": 30,
+
+    "eyeColor": "blue",
+
+    "name": "Tameka Maxwell",
+
+    "gender": "female",
+
+    "company": "ENOMEN",
+
+    "email": "tamekamaxwell@enomen.com",
+
+    "phone": "+1 (902) 557-3898",
+
+    "tags": [
+
+      "aliquip",
+
+      "anim",
+
+      "exercitation",
+
+      "non",
+
+    ],
+
+    "friends": [
+
+      {
+
+        "id": 0,
+
+        "name": "Barber Hicks"
+
+      },
+
+      {
+
+        "id": 1,
+
+        "name": "Santana Cruz"
+
+      },
+
+      {
+
+        "id": 2,
+
+        "name": "Leola Cabrera"
+
+      }
+
+    ],
+
+  };
+
+Используя деструктуризацию получить значения из следующих полей
+
+1. name,  balance, email
+
+2. из массива tags получить первый и последний элемент
+
+3. из массива friends получить значение поле name из первого элемента массива
+
+Если какое то из полей не имеет значения то подставить значение по умолчанию.
+*/
+let user = {
+  guid: "dd969d30-841d-436e-9550-3b0c649e4d34",
+  isActive: false,
+  balance: "$2,474.46",
+  age: 30,
+  eyeColor: "blue",
+  name: "Tameka Maxwell",
+  gender: "female",
+  company: "ENOMEN",
+  email: "tamekamaxwell@enomen.com",
+  phone: "+1 (902) 557-3898",
+  tags: ["aliquip", "anim", "exercitation", "non"],
+  friends: [
+    {
+      id: 0,
+      name: "Barber Hicks",
+    },
+    {
+      id: 1,
+      name: "Santana Cruz",
+    },
+    {
+      id: 2,
+      name: "Leola Cabrera",
+    },
+  ],
+};
+
+const getInfoObj = ({ ...args }) => {
+  const {
+    balance,
+    name,
+    email,
+    tags: [aliquip, , , non],
+    friends: [{ name: name2 }],
+  } = args;
+  return `Balance: ${balance}, Name: ${name}, Email: ${email} tags: ${aliquip}, ${non}, friends: ${name2}`;
+};
+const result3 = getInfoObj(user);
+console.log(result3);
