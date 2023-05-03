@@ -179,4 +179,16 @@ const getInfoObj = ({ ...args }) => {
   return `Balance: ${balance}, Name: ${name}, Email: ${email} tags: ${aliquip}, ${non}, friends: ${name2}`;
 };
 const result3 = getInfoObj(user);
-console.log(result3);
+// console.log(result3);
+
+// fourth
+/*С помощью оператора rest, из объекта user (из предыдущей задачи)
+скопировать в новый массив значение следующих полей tags и friends.*/
+const getNewArr = ({ ...user }) => {
+  const { tags, friends } = user;
+  const tagsFriends = [...tags, ...friends];
+  return tagsFriends;
+};
+
+const result4 = getNewArr(user);
+console.log(result4);
